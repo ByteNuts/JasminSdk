@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>ByteNuts.PrimaveraBss.JasminSdk.MvcCore</AssemblyName>
+    <RootNamespace>ByteNuts.PrimaveraBss.JasminSdk.MvcCore</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JasminSdk.Core\JasminSdk.Core.csproj" />
+  </ItemGroup>
+
+</Project>
