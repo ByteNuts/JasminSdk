@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 
-namespace ByteNuts.PrimaveraBss.JasminSdk.MvcCore
+namespace ByteNuts.PrimaveraBss.JasminSdk.AspNetCore
 {
     public static class JasminSdkSetup
     {

@@ -4,6 +4,7 @@
     <TargetFramework>netstandard1.1</TargetFramework>
     <AssemblyName>ByteNuts.PrimaveraBss.JasminSdk.Core</AssemblyName>
     <RootNamespace>ByteNuts.PrimaveraBss.JasminSdk.Core</RootNamespace>
+    <Version>0.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
