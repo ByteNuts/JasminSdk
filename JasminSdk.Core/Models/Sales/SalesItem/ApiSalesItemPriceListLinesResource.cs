@@ -2,7 +2,7 @@
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Sales.SalesItem
 {
-    public class ApiBaseSalesItemPriceListLinesResource
+    public class ApiSalesItemPriceListLinesResource
     {
 
         #region Required Properties
