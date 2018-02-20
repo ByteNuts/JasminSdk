@@ -22,4 +22,9 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Purchases\Supplier\" />
+    <Folder Include="Models\Purchases\PurchaseItem\" />
+  </ItemGroup>
+
 </Project>

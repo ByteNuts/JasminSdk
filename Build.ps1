@@ -60,6 +60,6 @@ exec { & dotnet msbuild "/t:Restore" /p:VersionSuffix=$revision /p:Configuration
 
 #Invoke-MSBuild
 
-exec { & dotnet pack .\JasminSdk.Core -c Release -o .\..\artifacts --version-suffix=$revision }  
-exec { & dotnet pack .\JasminSdk.AspNetCore -c Release -o .\..\artifacts --version-suffix=$revision }  
-exec { & nuget pack .\JasminSdk.Mvc\JasminSdk.Mvc.csproj -Build -properties configuration=Release;OutputPath=.\..\artifacts }  
+#exec { & dotnet pack .\JasminSdk.Core -c Release -o .\..\artifacts --version-suffix=$revision }  
+#exec { & dotnet pack .\JasminSdk.AspNetCore -c Release -o .\..\artifacts --version-suffix=$revision }  
+#exec { & nuget pack .\JasminSdk.Mvc\JasminSdk.Mvc.csproj -Build -properties configuration=Release }  
