@@ -6,12 +6,19 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Threading.Tasks;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
+using Microsoft.Extensions.Logging;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers
 {
-    public static class ApiCall<T>
+    public class ApiCall<T>
     {
-        public static async Task<ApiResponse<T>> Get(string endpoint, bool expect404 = false, bool useBearerAuth = true)
+        protected readonly ILogger Logger;
+        public ApiCall(ILogger logger)
+        {
+            Logger = logger;
+        }
+
+        public async Task<ApiResponse<T>> Get(string endpoint, bool expect404 = false, bool useBearerAuth = true)
         {
             if (useBearerAuth && (string.IsNullOrEmpty(Constants.AccessToken) || Constants.AccessTokenLifetime <= DateTime.Now))
                 await AuthenticationHelper.RefreshAccessTokenAsync();
@@ -86,7 +93,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers
             }
         }
 
-        public static async Task<ApiResponse<T>> Post(string endpoint, HttpContent content, bool useBearerAuth = true)
+        public async Task<ApiResponse<T>> Post(string endpoint, HttpContent content, bool useBearerAuth = true)
         {
             if (useBearerAuth && (string.IsNullOrEmpty(Constants.AccessToken) || Constants.AccessTokenLifetime <= DateTime.Now))
                 await AuthenticationHelper.RefreshAccessTokenAsync();
@@ -141,7 +148,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers
             }
         }
 
-        public static async Task<ApiResponse<T>> Put(string endpoint, HttpContent content, bool expect404 = false, bool useBearerAuth = true)
+        public async Task<ApiResponse<T>> Put(string endpoint, HttpContent content, bool expect404 = false, bool useBearerAuth = true)
         {
             if (useBearerAuth && (string.IsNullOrEmpty(Constants.AccessToken) || Constants.AccessTokenLifetime <= DateTime.Now))
                 await AuthenticationHelper.RefreshAccessTokenAsync();
@@ -194,7 +201,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers
             }
         }
 
-        public static async Task<ApiResponse<T>> Delete(string endpoint, bool expect404 = false, bool useBearerAuth = true)
+        public async Task<ApiResponse<T>> Delete(string endpoint, bool expect404 = false, bool useBearerAuth = true)
         {
             if (useBearerAuth && (string.IsNullOrEmpty(Constants.AccessToken) || Constants.AccessTokenLifetime <= DateTime.Now))
                 await AuthenticationHelper.RefreshAccessTokenAsync();
@@ -258,7 +265,6 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers
             }
             return type.IsPrimitive
                    || type.IsEnum
-                   //|| type.Equals(typeof(string))
                    || type.Equals(typeof(decimal));
         }
     }

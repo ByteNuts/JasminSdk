@@ -5,13 +5,20 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MasterDataBusinessEntitiesService
 {
     public class Item : IItem
     {
         protected readonly string EndPoint;
-        internal Item(string endpoint) { EndPoint = endpoint; }
+        protected readonly ILogger Logger;
+
+        internal Item(string endpoint, ILogger logger)
+        {
+            EndPoint = endpoint;
+            Logger = logger;
+        }
 
 
 
@@ -21,7 +28,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MasterDataBusinessEntiti
         {
             var url = $"{EndPoint}/{itemKey}";
 
-            return await ApiCall<ItemResource>.Get(url);
+            var apiCall = new ApiCall<ItemResource>(Logger);
+            return await apiCall.Get(url);
         }
 
         #endregion GET
@@ -37,7 +45,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MasterDataBusinessEntiti
             var json = JsonConvert.SerializeObject(item, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Post(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Post(url, content);
         }
 
 
@@ -55,7 +64,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MasterDataBusinessEntiti
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
         public async Task<ApiResponse<string>> PutSetItemComplementaryDescription(string itemKey, string value)
@@ -65,7 +75,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MasterDataBusinessEntiti
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
         #endregion PUT

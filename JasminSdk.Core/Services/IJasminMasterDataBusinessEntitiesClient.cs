@@ -2,7 +2,7 @@
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services
 {
-    public interface IJasminMasterDataBusinessEntities
+    public interface IJasminMasterDataBusinessEntitiesClient
     {
         IItem Item { get; }
     }

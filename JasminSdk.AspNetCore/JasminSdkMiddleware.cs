@@ -8,7 +8,7 @@ using Microsoft.Extensions.Options;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.AspNetCore
 {
-    public static class JasminSdkSetup
+    public static class JasminSdkMiddleware
     {
         public static IServiceCollection AddJasminSdk(this IServiceCollection services, IOptions<JasminConfig> configureOptions)
         {
@@ -31,10 +31,10 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.AspNetCore
         {
             services.TryAddSingleton<IJasminClient, JasminClient>();
 
-            services.TryAddSingleton<IJasminAccountsReceivable, JasminAccountsReceivablesClient>();
-            services.TryAddSingleton<IJasminMasterDataBusinessEntities, JasminMasterDataBusinessEntitiesClient>();
-            services.TryAddSingleton<IJasminMaterialsCore, JasminMaterialsCoreClient>();
-            services.TryAddSingleton<IJasminSales, JasminSalesClient>();
+            services.TryAddSingleton<IJasminAccountsReceivableClient, JasminAccountsReceivableClient>();
+            services.TryAddSingleton<IJasminMasterDataBusinessEntitiesClient, JasminMasterDataBusinessEntitiesClient>();
+            services.TryAddSingleton<IJasminMaterialsCoreClient, JasminMaterialsCoreClient>();
+            services.TryAddSingleton<IJasminSalesClient, JasminSalesClient>();
 
             return services;
         }

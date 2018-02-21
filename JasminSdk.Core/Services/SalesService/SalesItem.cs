@@ -6,13 +6,19 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
 {
     public class SalesItem : ISalesItem
     {
         protected readonly string EndPoint;
-        internal SalesItem(string endpoint) { EndPoint = endpoint; }
+        protected readonly ILogger Logger;
+        internal SalesItem(string endpoint, ILogger logger)
+        {
+            EndPoint = endpoint;
+            Logger = logger;
+        }
 
         #region GET
 
@@ -21,7 +27,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}/extension";
 
-            return await ApiCall<List<SalesItemResource>>.Get(url);
+            var apiCall = new ApiCall<List<SalesItemResource>>(Logger);
+            return await apiCall.Get(url);
         }
 
 
@@ -29,7 +36,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}/extension?page={page}&pageSize={pageSize}";
 
-            return await ApiCall<List<SalesItemResource>>.Get(url);
+            var apiCall = new ApiCall<List<SalesItemResource>>(Logger);
+            return await apiCall.Get(url);
         }
 
 
@@ -37,7 +45,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}/{id}/extension";
 
-            return await ApiCall<SalesItemResource>.Get(url, true);
+            var apiCall = new ApiCall<SalesItemResource>(Logger);
+            return await apiCall.Get(url, true);
         }
 
 
@@ -45,7 +54,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}/{itemKey}/extension";
 
-            return await ApiCall<SalesItemResource>.Get(url, true);
+            var apiCall = new ApiCall<SalesItemResource>(Logger);
+            return await apiCall.Get(url, true);
         }
 
 
@@ -53,7 +63,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}";
 
-            return await ApiCall<List<BaseSalesItemResource>>.Get(url);
+            var apiCall = new ApiCall<List<BaseSalesItemResource>>(Logger);
+            return await apiCall.Get(url);
         }
 
 
@@ -61,7 +72,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}?page={page}&pageSize={pageSize}";
 
-            return await ApiCall<List<BaseSalesItemResource>>.Get(url);
+            var apiCall = new ApiCall<List<BaseSalesItemResource>>(Logger);
+            return await apiCall.Get(url);
         }
 
 
@@ -69,7 +81,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}/{id}";
 
-            return await ApiCall<BaseSalesItemResource>.Get(url, true);
+            var apiCall = new ApiCall<BaseSalesItemResource>(Logger);
+            return await apiCall.Get(url, true);
         }
 
 
@@ -77,7 +90,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}/{itemKey}";
 
-            return await ApiCall<BaseSalesItemResource>.Get(url, true);
+            var apiCall = new ApiCall<BaseSalesItemResource>(Logger);
+            return await apiCall.Get(url, true);
         }
 
 
@@ -95,7 +109,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(salesItemResource, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Post(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Post(url, content);
         }
 
 
@@ -106,7 +121,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(salesItemResource, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Post(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Post(url, content);
         }
 
 
@@ -118,7 +134,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Post(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Post(url, content);
         }
 
         #endregion POST
@@ -135,7 +152,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
 
@@ -146,7 +164,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
 
@@ -157,7 +176,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content, true);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content, true);
         }
 
 
@@ -168,7 +188,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
 
@@ -179,7 +200,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
 
@@ -190,7 +212,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
         public async Task<ApiResponse<string>> PutSetPriceListPriceListLine(string itemKey, string lineId, string value)
@@ -200,7 +223,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
         public async Task<ApiResponse<string>> PutSetUnitPriceListLine(string itemKey, string lineId, string value)
@@ -210,7 +234,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
 
@@ -221,7 +246,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
             var json = JsonConvert.SerializeObject(value, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Put(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(url, content);
         }
 
 
@@ -237,7 +263,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}/{itemKey}/priceListLines/{lineId}";
 
-            return await ApiCall<string>.Delete(url, true);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Delete(url, true);
         }
 
 
@@ -245,7 +272,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}/{id}";
 
-            return await ApiCall<string>.Delete(url, true);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Delete(url, true);
         }
 
 
@@ -253,7 +281,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
         {
             var url = $"{EndPoint}/{itemKey}";
 
-            return await ApiCall<string>.Delete(url, true);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Delete(url, true);
         }
 
 

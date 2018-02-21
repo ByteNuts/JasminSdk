@@ -30,7 +30,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsCoreService
 
         #region PUT
 
-        Task<ApiResponse<bool>> PutSetDefaultWarehouse(string itemKey, string value);
+        Task<ApiResponse<string>> PutSetDefaultWarehouse(string itemKey, string value);
 
         #endregion PUT
     }

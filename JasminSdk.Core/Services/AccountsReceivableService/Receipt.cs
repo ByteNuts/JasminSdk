@@ -1,13 +1,20 @@
 ﻿using System.Threading.Tasks;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
+using Microsoft.Extensions.Logging;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.AccountsReceivableService
 {
     public class Receipt : IReceipt
     {
         protected readonly string EndPoint;
-        internal Receipt(string endpoint) { EndPoint = endpoint; }
+        protected readonly ILogger Logger;
+
+        internal Receipt(string endpoint, ILogger logger)
+        {
+            EndPoint = endpoint;
+            Logger = logger;
+        }
 
 
         #region GET
@@ -18,7 +25,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.AccountsReceivableServic
         {
             var url = $"{EndPoint}/{id}/print";
 
-            return await ApiCall<byte[]>.Get(url);
+            var apiCall = new ApiCall<byte[]>(Logger);
+            return await apiCall.Get(url);
         }
 
 

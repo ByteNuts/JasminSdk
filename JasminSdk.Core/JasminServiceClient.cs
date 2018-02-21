@@ -1,21 +1,25 @@
 ﻿using System;
 using System.Net.Http;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
+using Microsoft.Extensions.Logging;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core
 {
     public abstract class JasminServiceClient : IDisposable
     {
         private bool _disposed;
+        protected readonly ILoggerFactory LoggerFactory;
         protected HttpClient JasminClient { get; set; }
 
-        protected JasminServiceClient()
+        protected JasminServiceClient(ILoggerFactory loggerFactory)
         {
+            LoggerFactory = loggerFactory ?? ApplicationLogging.LoggerFactory;
         }
 
-        protected JasminServiceClient(JasminConfig config)
+        protected JasminServiceClient(JasminConfig config, ILoggerFactory loggerFactory)
         {
             Constants.Config = config;
+            LoggerFactory = loggerFactory ?? ApplicationLogging.LoggerFactory;
         }
 
 

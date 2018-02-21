@@ -2,8 +2,8 @@
 {
     public interface IJasminClient
     {
-        IJasminSales Sales { get; }
+        IJasminSalesClient Sales { get; }
 
-        IJasminMasterDataBusinessEntities MasterDataBusinessEntities { get; }
+        IJasminMasterDataBusinessEntitiesClient MasterDataBusinessEntities { get; }
     }
 }

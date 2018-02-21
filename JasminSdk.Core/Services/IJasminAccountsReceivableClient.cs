@@ -2,7 +2,7 @@
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services
 {
-    public interface IJasminAccountsReceivable
+    public interface IJasminAccountsReceivableClient
     {
         ICreateReceipt CreateReceipt { get; }
 

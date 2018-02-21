@@ -7,13 +7,20 @@ using ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
 using Newtonsoft.Json;
 using System.Net.Http;
+using Microsoft.Extensions.Logging;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.AccountsReceivableService
 {
     public class CreateReceipt : ICreateReceipt
     {
         protected readonly string EndPoint;
-        internal CreateReceipt(string endpoint) { EndPoint = endpoint; }
+        protected readonly ILogger Logger;
+
+        internal CreateReceipt(string endpoint, ILogger logger)
+        {
+            EndPoint = endpoint;
+            Logger = logger;
+        }
 
 
         #region GET
@@ -27,7 +34,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.AccountsReceivableServic
             if (total.HasValue) url = $"{url}&{total}";
             if (!string.IsNullOrEmpty(sourceDoc)) url = $"{url}&{sourceDoc}";
 
-            return await ApiCall<List<OpenAccountPostingLine>>.Get(url);
+            var apiCall = new ApiCall<List<OpenAccountPostingLine>>(Logger);
+            return await apiCall.Get(url);
         }
 
 
@@ -43,7 +51,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.AccountsReceivableServic
             var json = JsonConvert.SerializeObject(list, RequestHelper.JsonSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Post(url, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Post(url, content);
         }
 
         #endregion POST

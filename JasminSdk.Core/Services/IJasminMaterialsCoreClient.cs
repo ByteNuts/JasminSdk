@@ -2,7 +2,7 @@
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services
 {
-    public interface IJasminMaterialsCore
+    public interface IJasminMaterialsCoreClient
     {
         IMaterialsItem MaterialsItem { get; }
     }

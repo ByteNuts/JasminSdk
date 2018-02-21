@@ -1,16 +1,14 @@
 ﻿using ByteNuts.PrimaveraBss.JasminSdk.Core;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
-using Owin;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Mvc
 {
-    public static class JasminSdkMvcExtensions
+    public static class JasminSdkConfig
     {
-        public static IAppBuilder UseJasminSdk(this IAppBuilder builder, JasminConfig config)
+        public static void UseJasminSdk(JasminConfig config)
         {
             Constants.Config = config;
-
-            return builder;
+            ApplicationLogging.LoggerFactory = LoggerFactory.Factory();
         }
     }
 }

@@ -7,13 +7,20 @@ using System.Text;
 using System.Threading.Tasks;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
+using Microsoft.Extensions.Logging;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsCoreService
 {
     public class MaterialsItem : IMaterialsItem
     {
         protected readonly string EndPoint;
-        internal MaterialsItem(string endpoint) { EndPoint = endpoint; }
+        protected readonly ILogger Logger;
+
+        internal MaterialsItem(string endpoint, ILogger logger)
+        {
+            EndPoint = endpoint;
+            Logger = logger;
+        }
 
         #region GET
 
@@ -40,7 +47,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsCoreService
             var json = JsonConvert.SerializeObject(materialsItem, settings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Post(endpoint, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Post(endpoint, content);
         }
 
 
@@ -58,7 +66,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsCoreService
             var json = JsonConvert.SerializeObject(materialsItemWharehouse, settings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<string>.Post(endpoint, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Post(endpoint, content);
         }
 
         #endregion POST
@@ -68,7 +77,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsCoreService
 
         #region PUT
 
-        public async Task<ApiResponse<bool>> PutSetDefaultWarehouse(string itemKey, string value)
+        public async Task<ApiResponse<string>> PutSetDefaultWarehouse(string itemKey, string value)
         {
             var endpoint = string.Format(CultureInfo.CurrentCulture, "{0}/api/{1}/{2}/materialsCore/materialsItems/{3}/defaultWarehouse", Constants.JasminBaseAppUrl, Constants.Config.AccountKey, Constants.Config.SubscriptionKey, itemKey);
 
@@ -81,7 +90,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsCoreService
             var json = JsonConvert.SerializeObject(value, settings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ApiCall<bool>.Put(endpoint, content);
+            var apiCall = new ApiCall<string>(Logger);
+            return await apiCall.Put(endpoint, content);
         }
 
         #endregion PUT

@@ -1,25 +1,26 @@
 ﻿using System.Net.Http;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
+using Microsoft.Extensions.Logging;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services
 {
     public class JasminClient : JasminServiceClient, IJasminClient
     {
-        public JasminClient()
+        public JasminClient(ILoggerFactory loggerFactory = null) : base(loggerFactory)
         {
         }
 
-        public JasminClient(JasminConfig credentials) : base(credentials)
+        public JasminClient(JasminConfig credentials, ILoggerFactory loggerFactory = null) : base(credentials, loggerFactory)
         {
             JasminClient = new HttpClient();
         }
 
 
-        public IJasminAccountsReceivable AccountsReceivable => new JasminAccountsReceivablesClient();
+        public IJasminAccountsReceivableClient AccountsReceivable => new JasminAccountsReceivableClient(LoggerFactory);
 
-        public IJasminMasterDataBusinessEntities MasterDataBusinessEntities => new JasminMasterDataBusinessEntitiesClient();
+        public IJasminMasterDataBusinessEntitiesClient MasterDataBusinessEntities => new JasminMasterDataBusinessEntitiesClient(LoggerFactory);
 
-        public IJasminSales Sales => new JasminSalesClient();
+        public IJasminSalesClient Sales => new JasminSalesClient(LoggerFactory);
 
     }
 }
