@@ -5,6 +5,16 @@
     <AssemblyName>ByteNuts.PrimaveraBss.JasminSdk.Core</AssemblyName>
     <RootNamespace>ByteNuts.PrimaveraBss.JasminSdk.Core</RootNamespace>
     <Version>0.1.0</Version>
+    <PackageId>JasminSdk</PackageId>
+    <Authors>João Pereira</Authors>
+    <Company>ByteNuts</Company>
+    <Product>Jasmin SDK</Product>
+    <Description>.Net SDK for Jasmin Software from Primavera BSS</Description>
+    <PackageTags>SDK Jasmin Primavera ByteNuts</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/ByteNuts/JasminSdk</PackageProjectUrl>
+    <PackageLicenseUrl>https://creativecommons.org/licenses/by-sa/4.0/</PackageLicenseUrl>
+    <Copyright>2018 - Byte Nuts - Tecnologia e Segurança de Informação</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -21,6 +31,7 @@
   <ItemGroup>
     <Folder Include="Models\Purchases\Supplier\" />
     <Folder Include="Models\Purchases\PurchaseItem\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>

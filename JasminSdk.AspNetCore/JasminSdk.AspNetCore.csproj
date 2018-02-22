@@ -5,12 +5,18 @@
     <AssemblyName>ByteNuts.PrimaveraBss.JasminSdk.AspNetCore</AssemblyName>
     <RootNamespace>ByteNuts.PrimaveraBss.JasminSdk.AspNetCore</RootNamespace>
     <Version>0.1.0</Version>
-    <PackageId>ByteNuts.PrimaveraBss.JasminSdk.AspNetCore</PackageId>
-    <Authors>ByteNuts.PrimaveraBss.JasminSdk.AspNetCore</Authors>
-    <Company>ByteNuts.PrimaveraBss.JasminSdk.AspNetCore</Company>
-    <Product>ByteNuts.PrimaveraBss.JasminSdk.AspNetCore</Product>
+    <PackageId>JasminSdk.AspNetCore</PackageId>
+    <Authors>João Pereira</Authors>
+    <Company>ByteNuts</Company>
+    <Product>Jasmin SDK for AspNetCore</Product>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <FileVersion>0.1.0.0</FileVersion>
+    <Description>AspNetCore .Net SDK for Jasmin Software from Primavera BSS</Description>
+    <Copyright>2018 - Byte Nuts - Tecnologia e Segurança de Informação</Copyright>
+    <PackageLicenseUrl>https://creativecommons.org/licenses/by-sa/4.0/</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ByteNuts/JasminSdk</PackageProjectUrl>
+    <PackageTags>SDK Jasmin Primavera ByteNuts AspNetCore</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
