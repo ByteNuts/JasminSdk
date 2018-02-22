@@ -10,7 +10,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Mvc
         static LoggerFactory()
         {
             _loggerFactory = new Microsoft.Extensions.Logging.LoggerFactory();
-            _loggerFactory.AddSerilog(dispose:true);
+            _loggerFactory.AddSerilog(dispose: true);
         }
 
         public static ILoggerFactory Factory() => _loggerFactory;
