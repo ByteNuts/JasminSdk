@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="Models\Purchases\Supplier\" />
-    <Folder Include="Models\Purchases\PurchaseItem\" />
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
