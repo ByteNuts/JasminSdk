@@ -7,7 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JasminSdk.Core", "JasminSdk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JasminSdk.Mvc", "JasminSdk.Mvc\JasminSdk.Mvc.csproj", "{7598990C-C860-4124-9966-C5B8B7C9F76E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JasminSdk.MvcCore", "JasminSdk.AspNetCore\JasminSdk.AspNetCore.csproj", "{3961174F-74DE-4BB9-B912-6DDFB41E1966}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JasminSdk.AspNetCore", "JasminSdk.AspNetCore\JasminSdk.AspNetCore.csproj", "{3961174F-74DE-4BB9-B912-6DDFB41E1966}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BC330E2E-F384-4981-92F0-FFC0EF96C79F}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		Build.ps1 = Build.ps1
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
