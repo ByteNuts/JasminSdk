@@ -48,7 +48,6 @@ Feel free to contribute if you have some free time!
 ```
 
 > Refer to the samples repository for examples.
-
 > [Samples repository](https://github.com/ByteNuts/JasminSdk.Samples)
 
 
