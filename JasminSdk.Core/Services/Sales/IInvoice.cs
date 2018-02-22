@@ -4,7 +4,7 @@ using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Enum;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Sales.Invoice;
 
-namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
+namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.Sales
 {
     public interface IInvoice
     {

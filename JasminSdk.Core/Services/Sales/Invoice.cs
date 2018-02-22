@@ -9,7 +9,7 @@ using ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Enum;
 using Microsoft.Extensions.Logging;
 
-namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
+namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.Sales
 {
     public class Invoice : IInvoice
     {

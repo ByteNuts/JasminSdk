@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Sales.CustomerParty;
 
-namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
+namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.Sales
 {
     public interface ICustomerParty
     {

@@ -97,7 +97,21 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core
 
         #region Purchases
 
-        internal static string SubPath_Purchases_ => "";
+        internal static string SubPath_Purchases_CreditOrDebitNote => "invoiceReceipt/memos";
+        internal static string SubPath_Purchases_Expense => "invoiceReceipt/expenses";
+        internal static string SubPath_Purchases_Invoice => "invoiceReceipt/invoices";
+        internal static string SubPath_Purchases_InvoiceReceiptNotification => "invoiceReceipt/invoiceReceiptNotifications";
+        internal static string SubPath_Purchases_InvoiceType => "purchasesCore/invoiceTypes";
+        internal static string SubPath_Purchases_MemoType => "purchasesCore/memoTypes";
+        internal static string SubPath_Purchases_Order => "purchases/orders";
+        internal static string SubPath_Purchases_OrderType => "purchasesCore/orderTypes";
+        internal static string SubPath_Purchases_ProcessOrder => "invoiceReceipt/processOrders";
+        internal static string SubPath_Purchases_ProcessReturnOrder => "invoiceReceipt/processReturnOrders";
+        internal static string SubPath_Purchases_PurchaseItem => "purchasesCore/purchasesItems";
+        internal static string SubPath_Purchases_PurchasesSetup => "purchasesCore/purchasesSetups";
+        internal static string SubPath_Purchases_SummaryValue => "purchases/summaryValues";
+        internal static string SubPath_Purchases_Supplier => "purchasesCore/supplierParties";
+        internal static string SubPath_Purchases_SupplierGroup => "purchasesCore/supplierGroups";
 
         #endregion Purchases
 

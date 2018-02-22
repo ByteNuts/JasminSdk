@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
-using ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService;
+using ByteNuts.PrimaveraBss.JasminSdk.Core.Services.Sales;
 using Microsoft.Extensions.Logging;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services

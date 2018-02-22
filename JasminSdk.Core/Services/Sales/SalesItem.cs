@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.SalesService
+namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.Sales
 {
     public class SalesItem : ISalesItem
     {
