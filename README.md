@@ -11,11 +11,9 @@ You can download and install this SDK package using NuGet.
 
 There are 3 NuGet packages associated with this SDK:
 
-**- JasminSdk.AspNetCore** - For .Net Core applications
-
-**- JasminSdk.Mvc** - For MVC 5 applications
-
-**- JasminSdk** - The core of the SDK (can be used standalone with any .NET Standard 2.0 compatible app)
+- **JasminSdk.AspNetCore** - For .Net Core applications
+- **JasminSdk.Mvc** - For MVC 5 applications
+- **JasminSdk** - The core of the SDK (can be used standalone with any .NET Standard 2.0 compatible app)
 
 
 Install the appropriate package using the Package Manager UI or through the console:
@@ -24,7 +22,7 @@ Install the appropriate package using the Package Manager UI or through the cons
 
 **2. Register the Sdk**
 
-On AspNetCore, register it on the ConfigureServices method in Startup class as following:
+On AspNetCore, register it on the ConfigureServices method in Startup.cs class as following:
 
 	services.AddJasminSdk(new JasminConfig
     {
@@ -49,9 +47,11 @@ Please note that the Sdk does not implement all Jasmin features yet.
 Feel free to contribute if you have some free time!
 ```
 
-Refer to the samples repository for examples.
+> Refer to the samples repository for examples.
 
-[Samples repository](https://github.com/ByteNuts/JasminSdk.Samples)
+> [Samples repository](https://github.com/ByteNuts/JasminSdk.Samples)
+
+
 
 ## Implemented features
 
