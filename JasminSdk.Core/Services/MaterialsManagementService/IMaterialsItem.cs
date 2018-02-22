@@ -2,7 +2,7 @@
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.MaterialsCore.MaterialsItem;
 using System.Threading.Tasks;
 
-namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsCoreService
+namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsManagementService
 {
     public interface IMaterialsItem
     {

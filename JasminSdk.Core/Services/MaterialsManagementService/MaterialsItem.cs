@@ -9,7 +9,7 @@ using ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
 using Microsoft.Extensions.Logging;
 
-namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsCoreService
+namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsManagementService
 {
     public class MaterialsItem : IMaterialsItem
     {

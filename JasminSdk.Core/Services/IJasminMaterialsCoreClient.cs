@@ -1,4 +1,4 @@
-﻿using ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsCoreService;
+﻿using ByteNuts.PrimaveraBss.JasminSdk.Core.Services.MaterialsManagementService;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services
 {
