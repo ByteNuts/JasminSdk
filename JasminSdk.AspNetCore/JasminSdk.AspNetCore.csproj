@@ -16,7 +16,8 @@
     <PackageLicenseUrl>https://creativecommons.org/licenses/by-sa/4.0/</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/ByteNuts/JasminSdk</PackageProjectUrl>
     <PackageTags>SDK Jasmin Primavera ByteNuts AspNetCore</PackageTags>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/ByteNuts/JasminSdk</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

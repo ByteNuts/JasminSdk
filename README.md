@@ -127,7 +127,7 @@ Feel free to contribute if you have some free time!
 - [ ] **Purchases**
 	- [ ] Credit or Debit Note
 	- [ ] Expense
-	- [ ] Invoice
+	- [x] Invoice
 	- [ ] Invoice Receipt Notification
 	- [ ] Invoice Type
 	- [ ] Memo Type
@@ -135,10 +135,10 @@ Feel free to contribute if you have some free time!
 	- [ ] Order Type
 	- [ ] Process Order
 	- [ ] Process Return Order
-	- [ ] Purchase Item
+	- [x] Purchase Item
 	- [ ] Purchases Setup
 	- [ ] Summary Value
-	- [ ] Supplier
+	- [x] Supplier
 	- [ ] Supplier Group
 - [ ] **Sales**
 	- [ ] Company Invoice

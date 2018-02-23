@@ -11,10 +11,11 @@
     <Product>Jasmin SDK</Product>
     <Description>.Net SDK for Jasmin Software from Primavera BSS</Description>
     <PackageTags>SDK Jasmin Primavera ByteNuts</PackageTags>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/ByteNuts/JasminSdk</PackageProjectUrl>
     <PackageLicenseUrl>https://creativecommons.org/licenses/by-sa/4.0/</PackageLicenseUrl>
     <Copyright>2018 - Byte Nuts - Tecnologia e Segurança de Informação</Copyright>
+    <RepositoryUrl>https://github.com/ByteNuts/JasminSdk</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
