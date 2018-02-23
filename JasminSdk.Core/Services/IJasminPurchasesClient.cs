@@ -7,5 +7,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services
         IInvoice Invoice { get; }
 
         IPurchaseItem PurchaseItem { get; }
+
+        ISupplier Supplier { get; }
+
     }
 }

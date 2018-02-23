@@ -19,6 +19,8 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services
 
         public IInvoice Invoice => new Invoice($"{RequestHelper.AccountApiUrl}/{Constants.SubPath_Purchases_Invoice}", LoggerFactory.CreateLogger<Invoice>());
 
-        public IPurchaseItem PurchaseItem => new PurchaseItem($"{RequestHelper.AccountApiUrl}/{Constants.SubPath_Purchases_PurchaseItem}", LoggerFactory.CreateLogger<Invoice>());
+        public IPurchaseItem PurchaseItem => new PurchaseItem($"{RequestHelper.AccountApiUrl}/{Constants.SubPath_Purchases_PurchaseItem}", LoggerFactory.CreateLogger<PurchaseItem>());
+
+        public ISupplier Supplier => new Supplier($"{RequestHelper.AccountApiUrl}/{Constants.SubPath_Purchases_Supplier}", LoggerFactory.CreateLogger<Supplier>());
     }
 }
