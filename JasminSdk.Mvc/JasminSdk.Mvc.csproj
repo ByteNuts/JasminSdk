@@ -5,7 +5,7 @@
     <AssemblyName>ByteNuts.PrimaveraBss.JasminSdk.Mvc</AssemblyName>
     <RootNamespace>ByteNuts.PrimaveraBss.JasminSdk.Mvc</RootNamespace>
     <PackageId>JasminSdk.Mvc</PackageId>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Version>0.1.0</Version>
     <Authors>João Pereira</Authors>
     <Company>ByteNuts</Company>
