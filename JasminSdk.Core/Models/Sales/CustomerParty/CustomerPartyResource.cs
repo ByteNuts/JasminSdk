@@ -5,6 +5,10 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Sales.CustomerParty
 {
     public class CustomerPartyResource
     {
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+
         #region Required Properties
 
 

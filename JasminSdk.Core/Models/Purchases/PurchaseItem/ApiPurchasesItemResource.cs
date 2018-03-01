@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.PurchasesItem
+namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.PurchaseItem
 {
     public class ApiPurchasesItemResource
     {

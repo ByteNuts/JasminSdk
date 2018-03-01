@@ -17,6 +17,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services
             JasminClient = new HttpClient();
         }
 
+        public Entity Entity => new Entity($"{RequestHelper.AccountApiUrl}/{Constants.SubPath_MasterDataBusinessEntities_Entity}", LoggerFactory.CreateLogger<Item>());
         public IItem Item => new Item($"{RequestHelper.AccountApiUrl}/{Constants.SubPath_MasterDataBusinessEntities_Item}", LoggerFactory.CreateLogger<Item>());
     }
 }

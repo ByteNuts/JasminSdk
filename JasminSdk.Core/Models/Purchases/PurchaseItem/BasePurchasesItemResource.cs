@@ -16,11 +16,14 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.PurchaseItem
         [JsonProperty("unit")]
         public string Unit { get; set; }
 
+        [JsonProperty("lastPrice")]
+        public LastPrice LastPrice { get; set; }
+
         /// <summary>
         /// The last price for the item.
         /// </summary>
-        [JsonProperty("lastPrice")]
-        public decimal? LastPrice { get; set; }
+        [JsonProperty("lastPriceAmount")]
+        public decimal? LastPriceAmount { get; set; }
 
         /// <summary>
         /// The money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values.

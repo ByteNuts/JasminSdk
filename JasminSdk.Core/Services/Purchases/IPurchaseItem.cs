@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.PurchaseItem;
-using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.PurchasesItem;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services.Purchases
 {

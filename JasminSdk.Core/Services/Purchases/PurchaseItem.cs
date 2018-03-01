@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.PurchaseItem;
-using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.PurchasesItem;
 using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Sales.SalesItem;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;

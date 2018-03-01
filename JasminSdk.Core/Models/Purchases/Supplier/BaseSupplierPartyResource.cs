@@ -49,7 +49,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.Supplier
         /// The key for the party. Uniquely identifies the entity/party within the organization.
         /// </summary>
         [JsonProperty("partyKey")]
-        public bool PartyKey { get; set; }
+        public string PartyKey { get; set; }
 
         /// <summary>
         /// The name for the party.

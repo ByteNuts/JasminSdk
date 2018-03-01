@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Enum;
+using ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.PurchaseItem;
 using Newtonsoft.Json;
 
 namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.Supplier
@@ -13,13 +12,21 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.Supplier
         /// The amount of money which needs to be paid or paid beforehand for a product.
         /// </summary>
         [JsonProperty("price")]
-        public decimal? Price { get; set; }
+        public LastPrice Price { get; set; }
+
+
+        [JsonProperty("priceAmount")]
+        public decimal? PriceAmount { get; set; }
 
         /// <summary>
         /// The last price paided for a product.
         /// </summary>
         [JsonProperty("lastPrice")]
-        public decimal? LastPrice { get; set; }
+        public LastPrice LastPrice { get; set; }
+
+
+        [JsonProperty("lastPriceAmount")]
+        public decimal? LastPriceAmount { get; set; }
 
         /// <summary>
         /// The money unit used by the system, such as Euros (EUR) or United States Dollars (USD). This value is important for currency exchanges or to set the number of decimal places used to represent values.

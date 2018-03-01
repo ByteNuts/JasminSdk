@@ -69,7 +69,20 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core
 
         #region Master Data Business Entities
 
+        internal static string SubPath_MasterDataBusinessEntities_Assortment => "businessCore/assortments";
+
+        internal static string SubPath_MasterDataBusinessEntities_Brand => "businessCore/brands";
+
+        internal static string SubPath_MasterDataBusinessEntities_Entity => "businessCore/parties";
+
+        internal static string SubPath_MasterDataBusinessEntities_ExchangeRatesDocument => "businessCore/exchangeRatesDocuments";
+
         internal static string SubPath_MasterDataBusinessEntities_Item => "businessCore/items";
+
+        internal static string SubPath_MasterDataBusinessEntities_Model => "businessCore/brandModels";
+
+        internal static string SubPath_MasterDataBusinessEntities_Serie => "businessCore/series";
+
 
         #endregion Master Data Business Entities
 

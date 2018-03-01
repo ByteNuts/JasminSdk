@@ -20,6 +20,10 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Services
 
         public IJasminMasterDataBusinessEntitiesClient MasterDataBusinessEntities => new JasminMasterDataBusinessEntitiesClient(LoggerFactory);
 
+        public IJasminMaterialsCoreClient MaterialsManagement => new JasminMaterialsCoreClient(LoggerFactory);
+
+        public IJasminPurchasesClient Purchases => new JasminPurchasesClient(LoggerFactory);
+
         public IJasminSalesClient Sales => new JasminSalesClient(LoggerFactory);
 
     }

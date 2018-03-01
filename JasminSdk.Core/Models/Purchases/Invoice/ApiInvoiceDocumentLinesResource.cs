@@ -42,7 +42,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.Invoice
         /// The invoice line item unit price. The default price is loaded from purchases item prices when there is a match on the combination of price list, currency, tax included and unit.
         /// </summary>
         [JsonProperty("unitPrice")]
-        public decimal? UnitPrice { get; set; }
+        public MoneyResource UnitPrice { get; set; }
 
         /// <summary>
         /// The expected line item delivery date. The default is the document date.

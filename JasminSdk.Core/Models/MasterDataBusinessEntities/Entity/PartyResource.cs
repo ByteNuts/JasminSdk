@@ -7,6 +7,10 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.MasterDataBusinessEntities
     {
         #region Required Properties
 
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+
         [JsonProperty("partyKey")]
         public string PartyKey { get; set; }
 
