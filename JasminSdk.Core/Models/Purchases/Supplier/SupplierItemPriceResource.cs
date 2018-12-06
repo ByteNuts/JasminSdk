@@ -8,6 +8,9 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.Supplier
 {
     public class SupplierItemPriceResource
     {
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
         #region Required Properties
 
         /// <summary>

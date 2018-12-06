@@ -7,6 +7,9 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Models.Purchases.Supplier
 {
     public class ApiSupplierPartyResource
     {
+        [JsonProperty("baseEntityKey")]
+        public string BaseEntityKey { get; set; }
+
         #region Required Properties
 
 

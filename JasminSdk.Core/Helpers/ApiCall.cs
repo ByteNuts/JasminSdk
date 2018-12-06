@@ -83,6 +83,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers
             }
             catch (Exception e)
             {
+                Logger.LogError(e, "Exceção (GET) no endpoint {0}", endpoint);
                 return new ApiResponse<T>
                 {
                     Success = false,
@@ -138,6 +139,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers
             }
             catch (Exception e)
             {
+                Logger.LogError(e, "Exceção (POST) no endpoint {0}", endpoint);
                 return new ApiResponse<T>
                 {
                     Success = false,
@@ -191,6 +193,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers
             }
             catch (Exception e)
             {
+                Logger.LogError(e, "Exceção (PUT) no endpoint {0}", endpoint);
                 return new ApiResponse<T>
                 {
                     Success = false,
@@ -244,6 +247,7 @@ namespace ByteNuts.PrimaveraBss.JasminSdk.Core.Helpers
             }
             catch (Exception e)
             {
+                Logger.LogError(e, "Exceção (DELETE) no endpoint {0}", endpoint);
                 return new ApiResponse<T>
                 {
                     Success = false,
